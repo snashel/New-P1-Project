@@ -30,11 +30,10 @@ struct node {
 struct arc {
     Node* nodeFrom;
     Node* nodeTo;
-    int length;
-    int flow;
-    int yaxWeight;
+    unsigned short length;
+    unsigned short flow;
+    short yaxWeight;
     int yaxR;
-    bool isCleared;
     bool isUsedInTree;
     bool residualWeight;
 };
