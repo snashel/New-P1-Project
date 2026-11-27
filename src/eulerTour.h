@@ -1,0 +1,4 @@
+#ifndef P1_EULERTOUR_H
+#define P1_EULERTOUR_H
+
+#endif //P1_EULERTOUR_H
