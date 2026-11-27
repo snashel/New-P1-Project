@@ -1,11 +1,7 @@
 #ifndef P1_FUNCTIONS_H
 #define P1_FUNCTIONS_H
 
-#include "eulerTour.h"
-#include "dijkstra.h"
-#include "edmondJohnson.h"
-#include "graphGen.h"
-#include "yaxiong.h"
+
 
 #define MAX_ARCS 4
 
@@ -42,6 +38,7 @@ struct arc {
     unsigned short length;
     unsigned short flow;
     short yaxWeight;
+    short inTreeLabel;
     int yaxR;
     bool isUsedInTree;
     bool residualWeight;
