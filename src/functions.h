@@ -1,9 +1,18 @@
 #ifndef P1_FUNCTIONS_H
 #define P1_FUNCTIONS_H
 
+#include "eulerTour.h"
+#include "dijkstra.h"
+#include "edmondJohnson.h"
+#include "graphGen.h"
+#include "yaxiong.h"
+
 #define MAX_ARCS 4
 
 #include <stdbool.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
 typedef struct node Node;
 typedef struct arc Arc;

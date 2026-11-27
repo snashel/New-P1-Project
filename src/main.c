@@ -1,11 +1,8 @@
-#include <stdio.h>
-#include <stdlib.h>
-
 #include "functions.h"
 
 int main(void)
 {
-
+    srand(time(NULL));
     int numberArray[] = {0,1,2,3,4,5,6,7};
 
     int** numbersIn = malloc(sizeof(int**));

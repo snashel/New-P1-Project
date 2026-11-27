@@ -1,5 +1,8 @@
-//
-// Created by Frede on 27-11-2026.
-//
+#include "functions.h"
 
-#include "eulerTour.h"
+
+void euler_tour(Graph graph) {
+    
+}
+
+
