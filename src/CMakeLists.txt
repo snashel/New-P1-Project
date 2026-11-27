@@ -3,8 +3,11 @@ add_library(functions
         functions.c
         edmondJohnson.c
         eulerTour.c
+        eulerTour.h
         graphGen.c
-        yaxiong.c )
+        yaxiong.c
+        dijkstra.c
+)
 
 target_include_directories(functions PUBLIC .)
 
