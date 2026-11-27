@@ -4,4 +4,4 @@
 
 #include "edmondJohnson.h"
 
-void edmondJohnson()
+void edmondJohnson();
