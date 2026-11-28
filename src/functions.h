@@ -9,6 +9,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <math.h>
 
 typedef struct node Node;
 typedef struct arc Arc;
@@ -26,7 +27,6 @@ struct node {
     Arc* arcsOut[MAX_ARCS];
     short balance;
     unsigned short distFromSrc;
-    short yaxP;
     unsigned short amountArcsIn;
     unsigned short amountArcsOut;
     bool isUsedInTree;
