@@ -1,6 +1,8 @@
 #include "yaxiong.h"
 #include "dijkstra.h"
 
+# define MAX_ARCS 100 // TODO: Replace with actual variable
+
 void yaxiong(Graph graph){
     // Step 1: Set initial solution
     for (int i = 0; i < graph.amountOfArcs; i++){
@@ -13,8 +15,34 @@ void yaxiong(Graph graph){
     Arc currArc = graph.arcArray[0];
     // Step 2: Check status of arcs (in while loop condition)
     while (currArc.flow == 0) {
-        // Step 3: Form cycle
-        // Get shortest path from t to s
+        // Step 3: Form cycle and change flow
+        // Get shortest path from s to t
+        Arc* path[MAX_ARCS];
+        int pathSize = dijkstra(path);
+        // Cycle created by shortestPath(s,t) + (t,s)
+
+        // Change flow for each arc in cycle. +1 flow if arc follows direction of (t,s), -1 flow if not
+        // currArc gets +1 flow always
+        currArc.flow++;
+        // Change flow for rest of the arcs in cycle
+        Node* previousNodePtr = currArc.nodeTo;
+        for (int i = 0; i < pathSize; i++){
+            // If the arc goes FROM the previous node, it follows the directions of (t,s)
+            if (path[i]->nodeFrom == previousNodePtr){
+                path[i]->flow++;
+                previousNodePtr = path[i]->nodeTo;
+            } 
+            // If the arc goes TO the previous node, it's going against the direction of (t,s)
+            else if (path[i]->nodeTo == previousNodePtr){
+                path[i]->flow--;
+                previousNodePtr = path[i]->nodeFrom;
+            } 
+            
+            else {
+                printf("Yaxiong error: Shortest path is not continuous");
+                return;
+            }
+        }
 
         // Step 4: Calculate arc values
         Arc unfeasibleArc;
